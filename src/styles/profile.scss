@@ -1,0 +1,12 @@
+.profile-wrapper {
+  margin: 4rem auto;
+  gap: 5rem;
+
+  & > div {
+    flex: 0.45;
+  }
+
+  .section-title {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav-menu {
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+
+    .nav-link {
+      color: #3b82f6;
+    }
+
+    .nav-link.active {
+      text-decoration: underline;
+    }
+
+    .separator {
+      color: #000;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+ul {
+  padding: 0;
+}
+
+.card {
+  width: 95%;
+  margin: auto;
+}
+
+.img-container {
+  display: flex;
+}
+
+.img-fluid {
+  width: 250px;
+}
+
+.reserved {
+  background-color: #18a2b8;
+  color: #fff;
+  margin-right: 1%;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 1px 3px;
+}
