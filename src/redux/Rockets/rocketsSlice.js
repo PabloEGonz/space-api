@@ -22,7 +22,7 @@ export const getRockets = createAsyncThunk('rockets/getRockets',
   });
 
 const initialState = {
-  rockets: [],
+  rockets: JSON.parse(localStorage.getItem('rockets')) || [],
   isLoading: false,
   error: undefined,
 };
@@ -36,6 +36,7 @@ const rocketsSlice = createSlice({
         if (rocket.id !== payload) return rocket;
         return { ...rocket, reserved: !rocket.reserved };
       });
+      localStorage.setItem('rockets', JSON.stringify(state.rockets));
     },
   },
   extraReducers: (builder) => {
@@ -46,6 +47,7 @@ const rocketsSlice = createSlice({
       .addCase(getRockets.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.rockets = payload;
+        localStorage.setItem('rockets', JSON.stringify(state.rockets));
       })
       .addCase(getRockets.rejected, (state, action) => {
         state.isLoading = false;

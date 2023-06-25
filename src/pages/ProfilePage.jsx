@@ -14,7 +14,7 @@ function ProfilePage() {
     <section className="profile-wrapper d-flex container">
       <div>
         <h2 className="section-title">My Missions</h2>
-        { activeMissions.length > 0 && (
+        { activeMissions.length > 0 ? (
           <Accordion>
             {activeMissions.map((mission) => (
               <CustomAccordion
@@ -22,14 +22,16 @@ function ProfilePage() {
                 id={mission.mission_id}
                 name={mission.mission_name}
                 desc={mission.description}
+                state={mission.status}
+                btn="mission"
               />
             ))}
           </Accordion>
-        )}
+        ) : (<p>You haven&apos;t joined any missions yet.</p>) }
       </div>
       <div>
         <h2>My Rockets</h2>
-        { rkts.length > 0 && (
+        { rkts.length > 0 ? (
           <Accordion>
             {rkts.map((rocket) => (
               <CustomAccordion
@@ -37,10 +39,12 @@ function ProfilePage() {
                 id={rocket.id}
                 name={rocket.name}
                 desc={rocket.description}
+                state={rocket.reserved}
+                btn="rocket"
               />
             ))}
           </Accordion>
-        )}
+        ) : (<p>You don&apos;t have any rockets reserved</p>)}
       </div>
     </section>
   );

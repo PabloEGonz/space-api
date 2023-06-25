@@ -8,7 +8,7 @@ import {
 import logo from './img/planet.jpg';
 import NavItem from './components/NavItem';
 import ProfilePage from './pages/ProfilePage';
-import Rocket from './components/Rockets';
+import RocketsPage from './pages/RocketsPage';
 import Page404 from './pages/Page404';
 import MissionsPage from './pages/MissionsPage';
 import './styles/header.scss';
@@ -17,7 +17,7 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
-        <Route index element={<Rocket />} />
+        <Route index element={<RocketsPage />} />
         <Route path="/missions" element={<MissionsPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element={<Page404 />} />
