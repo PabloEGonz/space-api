@@ -22,6 +22,8 @@ function ProfilePage() {
                 id={mission.mission_id}
                 name={mission.mission_name}
                 desc={mission.description}
+                state={mission.status}
+                btn="mission"
               />
             ))}
           </Accordion>
@@ -37,6 +39,8 @@ function ProfilePage() {
                 id={rocket.id}
                 name={rocket.name}
                 desc={rocket.description}
+                state={rocket.reserved}
+                btn="rocket"
               />
             ))}
           </Accordion>

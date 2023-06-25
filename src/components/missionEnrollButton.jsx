@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 import { toggleMissionStatus } from '../redux/missions/missionsSlice';
 
-const MissionEnrollmentButton = ({ className, missionId, missionStatus }) => {
+const MissionEnrollmentButton = ({ missionId, missionStatus }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -11,16 +11,15 @@ const MissionEnrollmentButton = ({ className, missionId, missionStatus }) => {
   };
 
   return missionStatus ? (
-    <Button className={className} onClick={handleClick} variant="outline-danger">Leave Mission</Button>
+    <Button className="flex-center" onClick={handleClick} variant="outline-danger">Leave Mission</Button>
   ) : (
-    <Button className={className} onClick={handleClick} variant="outline-secondary">Join Mission</Button>
+    <Button className="flex-center" onClick={handleClick} variant="outline-secondary">Join Mission</Button>
   );
 };
 
 MissionEnrollmentButton.propTypes = {
   missionId: PropTypes.string.isRequired,
   missionStatus: PropTypes.bool.isRequired,
-  className: PropTypes.string.isRequired,
 };
 
 export default MissionEnrollmentButton;

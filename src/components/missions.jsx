@@ -29,7 +29,6 @@ function MissionGrid({ missions }) {
             </td>
             <td>
               <MissionEnrollmentButton
-                className="flex-center"
                 missionId={mission.mission_id}
                 missionStatus={mission.status}
               />
